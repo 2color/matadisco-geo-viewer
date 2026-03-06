@@ -1,16 +1,29 @@
-Matadisco viewer
-================
+Matadisco geo viewer
+====================
 
-This is a viewer of metadata that was published on [ATProto]. The web viewer
-gets Matadisco records from the past few minutes from [Bluesky's Jetstream]
-and then keeps updating in real-time.
+This is a fork of the [generic Matadisco viewer] that renders records containing
+geographic coordinates on a map. Matadisco records are metadata published on
+[ATProto]. This viewer displays those that include a
+`geometry.coordinates` field — a GeoJSON-style polygon array, e.g.:
+
+```json
+"coordinates": [
+  [
+    [29.0881961272749, 30.7162611960672],
+    [29.0673739813091, 29.7260643413105],
+    [30.2013482340558, 29.7034877936209],
+    [30.2335518130996, 30.6927743663341],
+    [29.0881961272749, 30.7162611960672]
+  ]
+]
+```
+
+The web viewer gets Matadisco records from the past few minutes from
+[Bluesky's Jetstream] and then keeps updating in real-time, plotting each
+record's footprint on the map.
 
 Currently the only publisher is the [sentinel-to-atproto] Cloudflare worker. So
-you'll see a lot of satellite images being displayed. It's planned that in the
-future there will also be other Matadisco records.
-
-The viewer features a modern, responsive UI built with [Tailwind CSS] that works
-seamlessly on desktop, tablet, and mobile devices.
+you'll see a lot of satellite image footprints being displayed.
 
 
 Demo
@@ -101,6 +114,7 @@ This project is licensed under either of
 
 at your option.
 
+[generic Matadisco viewer]: https://github.com/vmx/matadisco-viewer/
 [ATProto]: https://atproto.com/
 [ATProto Jetstream]: https://docs.bsky.app/blog/jetstream
 [Bluesky's Jetstream]: https://docs.bsky.app/blog/jetstream
