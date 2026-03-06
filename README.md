@@ -1,8 +1,7 @@
-Matadisco geo viewer
-====================
+# Matadisco geo viewer
 
 This is a fork of the [generic Matadisco viewer] that renders records containing
-geographic coordinates on a map. Matadisco records are metadata published on
+geographic coordinates on a map. [Matadisco] records are metadata published on
 [ATProto]. This viewer displays those that include a
 `geometry.coordinates` field — a GeoJSON-style polygon array, e.g.:
 
@@ -25,55 +24,56 @@ record's footprint on the map.
 Currently the only publisher is the [sentinel-to-atproto] Cloudflare worker. So
 you'll see a lot of satellite image footprints being displayed.
 
+## Demo
 
-Demo
-----
+See it in action at https://2color.github.io/matadisco-geo-viewer/.
 
-See it in action at https://vmx.github.io/matadisco-viewer/.
-
-
-Running locally
----------------
+## Running locally
 
 ### Web viewer
 
 Install dependencies:
 
+```
     npm install
+```
 
 Start the development server with hot module replacement:
 
+```
     npm run dev
+```
 
 You can now access the viewer at http://localhost:3000/
 
 The dev server provides instant updates when you modify CSS or JavaScript files.
 
-
 ### CLI viewer
 
 The CLI viewer just displays the metadata records as they arrive.
 
+```
     npm install
     npm start
+```
 
-
-Building for production
------------------------
+## Building for production
 
 To build an optimized production bundle:
 
+```
     npm run build
+```
 
 The output will be in the `dist/` directory, ready to deploy to any static hosting service.
 
 To preview the production build locally:
 
+```
     npm run preview
+```
 
-
-Development
------------
+## Development
 
 ### Tech Stack
 
@@ -86,34 +86,20 @@ Development
 
 Format code with Biome:
 
+```
     npm run fmt
-
-### Project Structure
-
-```
-matadisco-viewer/
-├── src/
-│   ├── web.js         # Browser entry point
-│   ├── node.js        # CLI entry point
-│   ├── jetstream.js   # WebSocket connection logic
-│   ├── config.js      # Configuration
-│   └── input.css      # Tailwind CSS entry point
-├── index.html         # HTML template with Tailwind classes
-├── vite.config.js     # Vite configuration
-└── tailwind.config.js # Tailwind configuration
 ```
 
-
-License
--------
+## License
 
 This project is licensed under either of
 
- - Apache License, Version 2.0, ([LICENSE-APACHE] or https://www.apache.org/licenses/LICENSE-2.0)
- - MIT license ([LICENSE-MIT] or https://opensource.org/licenses/MIT)
+- Apache License, Version 2.0, ([LICENSE-APACHE] or https://www.apache.org/licenses/LICENSE-2.0)
+- MIT license ([LICENSE-MIT] or https://opensource.org/licenses/MIT)
 
 at your option.
 
+[Matadisco]: https://github.com/vmx/matadisco/
 [generic Matadisco viewer]: https://github.com/vmx/matadisco-viewer/
 [ATProto]: https://atproto.com/
 [ATProto Jetstream]: https://docs.bsky.app/blog/jetstream

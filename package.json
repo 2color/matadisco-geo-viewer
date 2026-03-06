@@ -1,8 +1,8 @@
 {
-  "name": "matadisco-viewer",
+  "name": "matadisco-geo-viewer",
   "version": "0.1.0",
   "description": "View some metadata published on ATProto",
-  "author": "Volker Mische <volker.mische@gmail.com>",
+  "author": "Daniel Norman <daniel@norman.life>",
   "license": "Apache-2.0 OR MIT",
   "type": "module",
   "private": true,
