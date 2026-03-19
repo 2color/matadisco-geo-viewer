@@ -58,8 +58,10 @@ function fetchAndPlotMetadata(url, cardElement) {
       const dl = cardElement.querySelector(".metadata-content")
       const props = data.properties ?? {}
       const fields = []
-      if (props.datetime) fields.push(["Date", new Date(props.datetime).toLocaleString()])
-      if (props["eo:cloud_cover"] !== undefined) fields.push(["Cloud cover", `${Math.round(props["eo:cloud_cover"])}%`])
+      if (props.datetime)
+        fields.push(["Date", new Date(props.datetime).toLocaleString()])
+      if (props["eo:cloud_cover"] !== undefined)
+        fields.push(["Cloud cover", `${Math.round(props["eo:cloud_cover"])}%`])
       if (data.collection) fields.push(["Collection", data.collection])
 
       fields.forEach(([key, value]) => {
